@@ -19,13 +19,15 @@ public class ImageChoiceHandler {
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                //code for when button is pressed
-                Snackbar.make(view, "Correct!", Snackbar.LENGTH_LONG).show();
 
                 //set the image to a new image
                 //int the future use an array of images?
                 ImageView imageView = (ImageView) appCompatActivity.findViewById(R.id.imageView);
                 imageView.setImageResource(R.drawable.giraffe);
+
+                //code for when button is pressed
+                Snackbar.make(view, "Correct!", Snackbar.LENGTH_LONG).show();
+
             }
         });
 
