@@ -18,7 +18,6 @@ public class GuessActivity extends AppCompatActivity {
         //put in image choice handler
         ImageChoiceHandler imageChoiceHandler = new ImageChoiceHandler(this);
 
-
     }
 
 

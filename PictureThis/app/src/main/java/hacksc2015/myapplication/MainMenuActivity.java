@@ -26,7 +26,9 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //code for when button is pressed
-                Snackbar.make(view, "Hah you can't do that yet!", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(view, "Goes to Friends tab now", Snackbar.LENGTH_LONG).show();
+                Intent intent = new Intent("FRIENDS");
+                startActivity(intent);
 
             }
         });
