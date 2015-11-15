@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import java.io.File;
 
-public class MainActivityCamera extends AppCompatActivity {
+public class CameraActivity extends AppCompatActivity {
 
     private static String logtag = "CameraApp";
     private static int takePicture = 1;
@@ -26,7 +26,7 @@ public class MainActivityCamera extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_activity_camera);
+        setContentView(R.layout.activity_camera);
 
         Button cameraButton = (Button)findViewById(R.id.button_camera);
         cameraButton.setOnClickListener(cameraListener);
@@ -67,7 +67,7 @@ public class MainActivityCamera extends AppCompatActivity {
                 Bitmap scaled = Bitmap.createScaledBitmap(bitmap, 4096, 2304, false);
                 imageView.setRotation(90);
                 imageView.setImageBitmap(scaled);
-                Toast.makeText(MainActivityCamera.this, selectedImage.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(CameraActivity.this, selectedImage.toString(), Toast.LENGTH_LONG).show();
             }catch(Exception e){
                 Log.e(logtag, e.toString());
             }
