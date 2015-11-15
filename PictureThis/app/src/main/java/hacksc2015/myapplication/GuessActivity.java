@@ -3,8 +3,6 @@ package hacksc2015.myapplication;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 
 public class GuessActivity extends AppCompatActivity {
 
@@ -14,6 +12,10 @@ public class GuessActivity extends AppCompatActivity {
         setContentView(R.layout.activity_guess);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+
+
 
         //put in image choice handler
         ImageChoiceHandler imageChoiceHandler = new ImageChoiceHandler(this);

@@ -14,8 +14,9 @@ public class ImageChoiceHandler {
     //param should just be the word   this
     public ImageChoiceHandler(final AppCompatActivity appCompatActivity){ //essentially onCreate()
 
-
+        final CameraActivity cam = new CameraActivity();
         Button button1 = (Button) appCompatActivity.findViewById(R.id.button1);
+        button1.setText(cam.adjectives[cam.key]);
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -23,7 +24,7 @@ public class ImageChoiceHandler {
                 //set the image to a new image
                 //int the future use an array of images?
                 ImageView imageView = (ImageView) appCompatActivity.findViewById(R.id.imageView);
-                imageView.setImageResource(R.drawable.giraffe);
+                imageView.setImageBitmap(cam.scaled);
 
                 //code for when button is pressed
                 Snackbar.make(view, "Correct!", Snackbar.LENGTH_LONG).show();

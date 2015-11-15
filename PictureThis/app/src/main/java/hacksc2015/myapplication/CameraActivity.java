@@ -19,20 +19,31 @@ import java.io.File;
 
 public class CameraActivity extends AppCompatActivity {
 
+    public String adjectives[] = {"red", "orange", "yellow","green", "blue", "purple", "azure"};
     private static String logtag = "CameraApp";
     private static int takePicture = 1;
     private Uri imageUri;
+    public int key = (int)(Math.random()*adjectives.length);
+    public Bitmap scaled;
+    private Button cameraButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 
-        Button cameraButton = (Button)findViewById(R.id.button_camera);
+        cameraButton = (Button)findViewById(R.id.button_camera);
+        cameraButton.setText(adjectives[key]);
         cameraButton.setOnClickListener(cameraListener);
 
-    }
 
+    }
+    private View.OnClickListener nextListener = new View.OnClickListener(){
+        public void onClick(View v){
+            Intent intent = new Intent("MAKE_A_GUESS");
+            startActivity(intent);
+        }
+    };
     private View.OnClickListener cameraListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -64,13 +75,19 @@ public class CameraActivity extends AppCompatActivity {
 
             try{
                 bitmap = MediaStore.Images.Media.getBitmap(cr, selectedImage);
-                Bitmap scaled = Bitmap.createScaledBitmap(bitmap, 4096, 2304, false);
+                scaled = Bitmap.createScaledBitmap(bitmap, 4096, 2500, false);
                 imageView.setRotation(90);
                 imageView.setImageBitmap(scaled);
                 Toast.makeText(CameraActivity.this, selectedImage.toString(), Toast.LENGTH_LONG).show();
+                cameraButton.setText("Guess");
+                cameraButton.setOnClickListener(nextListener);
             }catch(Exception e){
                 Log.e(logtag, e.toString());
             }
         }
+    }
+    public Bitmap getBitmap (){
+        return scaled;
+
     }
 }
