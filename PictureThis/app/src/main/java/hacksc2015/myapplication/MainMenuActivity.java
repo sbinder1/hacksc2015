@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import com.microsoft.windowsazure.mobileservices.*;
 import com.microsoft.windowsazure.mobileservices.http.ServiceFilterResponse;
@@ -28,6 +29,9 @@ public class MainMenuActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
+        //Name Stuffs
+        final EditText editText = (EditText) findViewById(R.id.editText);
+
 
 
         //Button Stuffs
@@ -38,43 +42,14 @@ public class MainMenuActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //code for when button is pressed
                 Intent intent = new Intent("TO_DO_ACTIVITY");
+                intent.putExtra("name", editText.getText().toString());
                 startActivity(intent);
 
             }
         });
 
-        Button button_make_guess = (Button) findViewById(R.id.button_make_guess);
-        button_make_guess.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //code for when button is pressed
-                Intent intent = new Intent("MAKE_A_GUESS");
-                startActivity(intent);
-
-            }
-        });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
 }

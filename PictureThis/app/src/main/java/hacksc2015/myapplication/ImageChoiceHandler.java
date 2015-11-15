@@ -16,7 +16,7 @@ public class ImageChoiceHandler {
     //param should just be the word   this
     public ImageChoiceHandler(final AppCompatActivity appCompatActivity, String adj){ //essentially onCreate()
 
-        
+
 
         final CameraActivity cam = new CameraActivity();
         Button button1 = (Button) appCompatActivity.findViewById(R.id.button1);

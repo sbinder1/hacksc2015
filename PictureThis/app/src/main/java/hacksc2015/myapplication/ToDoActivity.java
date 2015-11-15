@@ -236,7 +236,7 @@ public class ToDoActivity extends Activity {
         final ToDoItem item = new ToDoItem();
 
 //        item.setText(mTextNewToDo.getText().toString());                //set the name of the file
-        item.setText("Drew");
+        item.setText(getIntent().getExtras().getString("name"));
         item.adj = adjectives[key];                                         //sets the adj
         item.setComplete(false);
         item.setContainerName("todoitemimages");

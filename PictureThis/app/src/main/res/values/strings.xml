@@ -3,7 +3,7 @@
     <string name="action_settings">Settings...yea fuck that</string>
     <string name="button_camera">Camera</string>
     <string name="image_camera">Image</string>
-    <string name="title_activity_main_menu">Main Menu</string>
+    <string name="title_activity_main_menu">Picture This</string>
     <string name="button_take_pic">Take A Picture</string>
     <string name="button_make_guess">Make A Guess</string>
     <string name="title_activity_make_guess">Make A Guess</string>
@@ -11,7 +11,7 @@
 
     <string name="add_textbox_hint">Adjective</string>
     <string name="add_button_text">Add</string>
-    <string name="mobile_services">Mobile Services </string>
+    <string name="mobile_services">Picture This</string>
     <string name="menu_refresh">Refresh</string>
     <string name="checkbox_text">Item Text</string>
     <string name="preview_button_text">Take Photo</string>
