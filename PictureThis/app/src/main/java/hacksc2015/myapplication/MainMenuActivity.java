@@ -11,8 +11,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import com.microsoft.windowsazure.mobileservices.*;
+import com.microsoft.windowsazure.mobileservices.http.ServiceFilterResponse;
+import com.microsoft.windowsazure.mobileservices.table.TableOperationCallback;
+
+import java.net.MalformedURLException;
 
 public class MainMenuActivity extends AppCompatActivity {
+
+    private MobileServiceClient mClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +28,31 @@ public class MainMenuActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //Azure Stuffs
+        try {
+            mClient = new MobileServiceClient(
+                    "https://picturethis.azure-mobile.net/",
+                    "dsFpreQLkQqvqtmBRwmQPGqXZKrGJl51",
+                    this
+            );
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        Item item = new Item();
+        item.Text = "Awesome item";
+        mClient.getTable(Item.class).insert(item, new TableOperationCallback<Item>() {
+            public void onCompleted(Item entity, Exception exception, ServiceFilterResponse response) {
+                if (exception == null) {
+                    // Insert succeeded
+                } else {
+                    // Insert failed
+                }
+            }
+        });
+
+
+        //Button Stuffs
         Button button_take_pic = (Button) findViewById(R.id.button_take_pic);
         button_take_pic.setOnClickListener(new View.OnClickListener() {
             @Override
