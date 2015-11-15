@@ -176,7 +176,13 @@ public class ToDoActivity extends Activity {
         }
 
         // Set the item as completed and update it in the table
-        item.setComplete(true);
+//        item.setComplete(true);
+
+
+        Intent intent = new Intent("MAKE_A_GUESS");
+        intent.putExtra("uri", item.getImageUri());
+        startActivity(intent);
+                                                                                    //when you tap the item this runs
 
         AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>(){
             @Override

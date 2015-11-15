@@ -21,11 +21,6 @@ public class ImageChoiceHandler {
             @Override
             public void onClick(View view) {
 
-                //set the image to a new image
-                //int the future use an array of images?
-                ImageView imageView = (ImageView) appCompatActivity.findViewById(R.id.imageView);
-                imageView.setImageBitmap(cam.scaled);
-
                 //code for when button is pressed
                 Snackbar.make(view, "Correct!", Snackbar.LENGTH_LONG).show();
 
