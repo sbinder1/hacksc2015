@@ -40,7 +40,7 @@ public class CameraActivity extends AppCompatActivity {
     }
     private View.OnClickListener nextListener = new View.OnClickListener(){
         public void onClick(View v){
-            Intent intent = new Intent("MAKE_A_GUESS");
+            Intent intent = new Intent("MAIN");
             startActivity(intent);
         }
     };
@@ -79,7 +79,7 @@ public class CameraActivity extends AppCompatActivity {
                 imageView.setRotation(90);
                 imageView.setImageBitmap(scaled);
                 Toast.makeText(CameraActivity.this, selectedImage.toString(), Toast.LENGTH_LONG).show();
-                cameraButton.setText("Guess");
+                cameraButton.setText("Main");
                 cameraButton.setOnClickListener(nextListener);
             }catch(Exception e){
                 Log.e(logtag, e.toString());
