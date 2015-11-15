@@ -62,7 +62,7 @@ public class GuessActivity extends AppCompatActivity {
 
 
         //put in image choice handler
-        ImageChoiceHandler imageChoiceHandler = new ImageChoiceHandler(this);
+        ImageChoiceHandler imageChoiceHandler = new ImageChoiceHandler(this, getIntent().getExtras().getString("adj"));
 
     }
 

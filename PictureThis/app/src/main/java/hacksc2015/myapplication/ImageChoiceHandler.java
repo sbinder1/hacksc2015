@@ -6,17 +6,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import java.util.Random;
+
 /**
  * Created by Drew on 11/14/2015.
  */
 public class ImageChoiceHandler {
 
     //param should just be the word   this
-    public ImageChoiceHandler(final AppCompatActivity appCompatActivity){ //essentially onCreate()
+    public ImageChoiceHandler(final AppCompatActivity appCompatActivity, String adj){ //essentially onCreate()
+
+        
 
         final CameraActivity cam = new CameraActivity();
         Button button1 = (Button) appCompatActivity.findViewById(R.id.button1);
-        button1.setText(cam.adjectives[cam.key]);
+        button1.setText(adj);
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

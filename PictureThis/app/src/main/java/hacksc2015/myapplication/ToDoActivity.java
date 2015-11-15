@@ -181,6 +181,7 @@ public class ToDoActivity extends Activity {
 
         Intent intent = new Intent("MAKE_A_GUESS");
         intent.putExtra("uri", item.getImageUri());
+        intent.putExtra("adj", item.adj);
         startActivity(intent);
                                                                                     //when you tap the item this runs
 
@@ -235,7 +236,8 @@ public class ToDoActivity extends Activity {
         final ToDoItem item = new ToDoItem();
 
 //        item.setText(mTextNewToDo.getText().toString());                //set the name of the file
-        item.setText(adjectives[key]);
+        item.setText("Drew");
+        item.adj = adjectives[key];                                         //sets the adj
         item.setComplete(false);
         item.setContainerName("todoitemimages");
 

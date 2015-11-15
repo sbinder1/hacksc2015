@@ -5,6 +5,8 @@ package hacksc2015.myapplication;
  */
 public class ToDoItem {
 
+    public String adj;
+
     /**
      * Item text
      */
