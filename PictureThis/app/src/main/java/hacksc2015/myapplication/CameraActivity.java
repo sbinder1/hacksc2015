@@ -90,4 +90,5 @@ public class CameraActivity extends AppCompatActivity {
         return scaled;
 
     }
+
 }
